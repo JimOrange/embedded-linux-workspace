@@ -1,0 +1,109 @@
+# ============================================
+# macOS System Files
+# ============================================
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+.Spotlight-V100
+.Trashes
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# ============================================
+# VSCode
+# ============================================
+.vscode/
+*.code-workspace
+*.code-search
+
+# ============================================
+# Vim / Emacs
+# ============================================
+*.swp
+*.swo
+*~
+.idea/
+*.iml
+*.iws
+
+# ============================================
+# Build Artifacts (C/C++ / Kernel / FPGA)
+# ============================================
+*.o
+*.ko
+*.mod
+*.mod.c
+*.cmd
+*.a
+*.so
+*.dylib
+*.exe
+*.out
+*.log
+*.tmp
+*.swp
+*.swo
+
+# ============================================
+# FPGA (Gowin / Vivado / Quartus)
+# ============================================
+impl/
+prj/
+runs/
+*.bit
+*.bin
+*.dtb
+*.dtbo
+*.log
+*.jou
+*.str
+*.rpt
+*.twr
+
+# ============================================
+# Linux Kernel / Buildroot / SDK
+# ============================================
+*.img
+*.img.gz
+*.sdcard
+*.ext4
+*.tar
+*.xz
+*.gz
+*.bz2
+*.zip
+Module.symvers
+*.o.mod
+*.mod.o
+*.mod.c
+System.map
+vmlinux*
+*.dtb*
+*.dtbo*
+
+# ============================================
+# Docker / SSH / Local Env
+# ============================================
+.env
+*.pem
+*.key
+*.crt
+*.pub
+*.kubeconfig
+*.id_rsa*
+
+# ============================================
+# IDE / Logs / Temporary
+# ============================================
+.DS_Store*
+._*
+*.log
+*.tmp
+*.temp
+*.cache
+*.bak
+*.orig
+*.rej
+.nfs*
