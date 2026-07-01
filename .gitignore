@@ -63,6 +63,34 @@ runs/
 *.twr
 
 # ============================================
+# Simulation Artifacts (Icarus Verilog / ModelSim)
+# ============================================
+*.vcd
+*.vcd.gz
+sim_top
+*.vcd.sav
+*.wlf
+*.vstf
+*.dsn
+*.asdb
+*.sim
+
+# ============================================
+# Gowin EDA Specific
+# ============================================
+*.gprj.user
+*.pin.html
+*.rpt.html
+*.fs
+*.fsmap
+*.gn
+*.ngc
+*.ngo
+*.xcf
+*.xrpt
+*.xpi
+
+# ============================================
 # Linux Kernel / Buildroot / SDK
 # ============================================
 *.img
