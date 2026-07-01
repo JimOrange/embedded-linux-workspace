@@ -4,8 +4,8 @@
 > Focus: BSP, Linux kernel drivers, system programming, FPGA, CPU design.
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Platform: TaishanPi](https://img.shields.io/badge/Platform-TaishanPi-brightgreen)](https://wiki.lckfb.com/)
-[![FPGA: LogicPi G1](https://img.shields.io/badge/FPGA-LogicPiG1-blue)](https://wiki.lckfb.com/)
+[![Platform: TaishanPi](https://img.shields.io/badge/Platform-TaishanPi-brightgreen)](https://wiki.lckfb.com/zh-hans/tspi-rk3566/)
+[![FPGA: LogicPi G1](https://img.shields.io/badge/FPGA-LogicPiG1-blue)](https://wiki.lckfb.com/zh-hans/fpga-ljpi/)
 
 ---
 
@@ -49,10 +49,10 @@
 ```
 embedded-linux-workspace/
 ├── phase0_hardware/           # FPGA / CPU design (in progress)
-│   ├── verilog_basics/       # Basic modules: adder, mux, counter
-│   ├── ddca_arm_notes/       # ARM edition reading notes
-│   ├── ddca_rv_notes/        # RISC-V edition comparison
-│   └── pipelined_cpu/        # 5-stage pipelined CPU implementation
+│   ├── verilog_basics/        # Basic modules: adder, mux, counter
+│   ├── ddca_arm_notes/        # ARM edition reading notes
+│   ├── ddca_rv_notes/         # RISC-V edition comparison
+│   └── pipelined_cpu/         # 5-stage pipelined CPU implementation
 ├── phase1_system/             # OS + System programming
 ├── phase2_kernel/             # Linux kernel + BSP
 ├── phase3_network/            # Networking + Final Project
@@ -71,7 +71,8 @@ embedded-linux-workspace/
 - Configured Wi-Fi auto-connect on boot
 
 ### 2. 3.1-inch MIPI Display
-- Enabled landscape mode by modifying panel initialization sequence
+- Enabled landscape mode by using rotate perperty of dts
+- Learn modifying panel initialization sequence
 
 ---
 
