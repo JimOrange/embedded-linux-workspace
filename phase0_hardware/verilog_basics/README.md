@@ -67,6 +67,7 @@ chmod +x ../scripts/sim.sh
 $ ../scripts/sim.sh
 ```
 
+```txt
 ======================================
 🚀 FPGA 仿真流程 (Icarus + GTKWave)
 📁 项目目录: /.../embedded-linux-workspace/phase0_hardware/verilog_basics/04_mux2
@@ -97,6 +98,7 @@ mux2_tb.v:36: $finish called at 160 (1ns)
 ======================================
 ✅ 全部完成！GTKWave 已启动
 ======================================
+```
 
 ### 3. 🧪 进阶操作：手动仿真（理解底层命令）
 如果你想手动执行每一步来加深理解，可以不用脚本，自己敲命令：
