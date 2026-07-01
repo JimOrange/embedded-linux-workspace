@@ -1,7 +1,9 @@
 # Verilog 基础模块实验集
 
 > **适用对象**：FPGA / 数字电路初学者
+> 
 > **硬件平台**：逻辑派 G1 (高云 GW2A-LV18PG256C8/I7)
+> 
 > **开发环境**：macOS (M3 Max) + Icarus Verilog + GTKWave
 
 ---
@@ -89,7 +91,7 @@ Time=80: sel=1, a=0, b=0, out=0
 Time=100: sel=1, a=1, b=0, out=0
 Time=120: sel=1, a=0, b=1, out=1
 Time=140: sel=1, a=1, b=1, out=1
-mux2_tb.v:36: $finish called at 160 (1ns)
+mux2_tb.v:47: $finish called at 160 (1ns)
 ✅ 仿真运行完成！
 🧹 已清理临时文件 sim_top
 
