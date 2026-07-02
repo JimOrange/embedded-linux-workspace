@@ -29,7 +29,7 @@ rm -f sim_top *.vcd 2>/dev/null
 # 编译
 echo ""
 echo "🔨 正在编译..."
-iverilog -o sim_top *.v
+iverilog -o sim_top -D SIM *.v
 echo "✅ 编译成功！"
 
 # 运行仿真
