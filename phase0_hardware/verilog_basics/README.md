@@ -149,7 +149,7 @@ Time=80: sel=1, a=0, b=0, out=0
 Time=100: sel=1, a=1, b=0, out=0
 Time=120: sel=1, a=0, b=1, out=1
 Time=140: sel=1, a=1, b=1, out=1
-mux2_tb.v:36: $finish called at 160 (1ns)
+mux2_tb.v:47: $finish called at 160 (1ns)
 ✅ 仿真运行完成！
 🧹 已清理临时文件 sim_top
 
