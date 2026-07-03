@@ -2,11 +2,10 @@
 
 > **适用对象**：FPGA / 数字电路初学者
 >
-> **硬件平台**：逻辑派 G1 (高云 GW2A-LV18PG256C8/I7)
+> **硬件平台**：逻辑派 G1（高云 GW2A-LV18PG256C8/I7）
 >
-> **开发环境**：macOS (M3 Max) + Icarus Verilog + GTKWave
+> **开发环境**：macOS（M3 Max）+ Icarus Verilog + GTKWave
 
----
 
 ## 📌 实验列表
 
@@ -18,7 +17,6 @@
 | 04 | `mux2` | 二选一多路器 | ✅ | ✅ |
 | 05 | `decoder_3_8` | 3-8译码器 | ✅ | 🔄 |
 
----
 
 ## 硬件说明（逻辑派 G1）
 
@@ -100,34 +98,39 @@ iverilog -v
 gtkwave --version
 ```
 
-### 2. 🚀 如何运行仿真？（标准操作流程——使用脚本）
-本项目在根目录提供了自动化脚本 scripts/sim.sh。你无需记忆任何编译命令，只需三步即可完成仿真并查看波形。
 
-第一步：进入任意实验目录（以04_mux2为例）
+### 2. 🚀 如何运行仿真？（标准操作流程——使用脚本）
+
+本项目在根目录提供了自动化脚本 `scripts/sim.sh`。你无需记忆任何编译命令，只需三步即可完成仿真并查看波形。
+
+#### 第一步：进入任意实验目录（以04_mux2为例）
+
 ```bash
 cd phase0_hardware/verilog_basics/04_mux2
 ```
 
-第二步：运行仿真脚本
+#### 第二步：运行仿真脚本
+
 ```bash
 ../scripts/sim.sh
 ```
 
-如果第一次运行提示 Permission denied，请先执行：
+如果第一次运行提示 `Permission denied`，请先执行：
+
 ```bash
 chmod +x ../scripts/sim.sh
 ```
-然后再运行 ../scripts/sim.sh。
 
-第三步：查看自动弹出的 GTKWave 波形窗口
+然后再运行 `../scripts/sim.sh`。
+
+#### 第三步：查看自动弹出的 GTKWave 波形窗口
+
 脚本会自动完成编译、仿真、清理中间文件，并打开 GTKWave 加载波形。
-成功的终端输出示例
+
+#### 成功的终端输出示例
 
 ```bash
 $ ../scripts/sim.sh
-```
-
-```txt
 ======================================
 🚀 FPGA 仿真流程 (Icarus + GTKWave)
 📁 项目目录: /.../embedded-linux-workspace/phase0_hardware/verilog_basics/04_mux2
@@ -160,8 +163,11 @@ mux2_tb.v:47: $finish called at 160 (1ns)
 ======================================
 ```
 
+
 ### 3. 🧪 进阶操作：手动仿真（理解底层命令）
+
 如果你想手动执行每一步来加深理解，可以不用脚本，自己敲命令：
+
 ```bash
 # 1. 进入实验目录
 cd phase0_hardware/verilog_basics/04_mux2
@@ -181,15 +187,20 @@ rm -f sim_top *.vcd
 
 建议初学者先用脚本跑通流程，再手动执行一次理解底层。
 
----
 
-## 目录结构
+## 📂 目录结构
 
 ```
 verilog_basics/
 ├── README.md                # 本文档（总览）
 ├── scripts/
 │   └── sim.sh               # 通用仿真脚本
+├── lib/                     # 可复用基础库（正逻辑，无条件编译）
+│   ├── core_and_gate.v
+│   ├── core_or_gate.v
+│   ├── core_not_gate.v
+│   ├── core_mux2.v
+│   └── ...
 ├── 01_and_gate/
 │   ├── README.md
 │   ├── and_gate.v
@@ -201,9 +212,60 @@ verilog_basics/
 └── 05_decoder_3_8/...
 ```
 
----
 
-## 相关资源
+## 📚 基础库（`lib/`）说明
+
+本目录下的 `lib/` 文件夹存放可复用的基础逻辑模块，供后续更复杂的电路设计（如全加器、ALU、CPU等）直接调用。
+
+### 1. 命名规范
+
+| 前缀 | 含义 | 示例 |
+|:---:|------|------|
+| `core_` | 基础库模块（正逻辑，无条件编译） | `core_and_gate.v` |
+
+所有 `lib/` 中的模块均采用**干净的正逻辑**（教科书标准），**不包含**条件编译（`ifdef SIM`）。它们只关注功能本身，与具体硬件平台无关，可在任何开发板上复用。
+
+条件编译版本（用于适配逻辑派 G1 的负逻辑硬件）仅保留在各个实验目录中，作为教学示例。
+
+### 2. 如何引用基础库？
+
+在更复杂的模块中，可以通过以下方式引用 `lib/` 中的模块：
+
+**方式一：在仿真脚本中指定搜索路径**
+
+```bash
+iverilog -o sim_top -I ./lib *.v
+```
+
+**方式二：在代码中使用 `include`**
+
+```verilog
+`include "core_and_gate.v"
+```
+
+**方式三：在 `sim.sh` 中统一配置**
+
+在 `scripts/sim.sh` 的 `iverilog` 命令中添加 `-I ../lib` 参数，所有实验均可自动引用。
+
+### 3. 已包含的基础模块
+
+| 模块名 | 文件 | 功能 |
+|--------|------|------|
+| 与门 | `core_and_gate.v` | `out = a & b` |
+| 或门 | `core_or_gate.v` | `out = a \| b` |
+| 非门 | `core_not_gate.v` | `out = ~a` |
+| 二选一多路器 | `core_mux2.v` | `sel=0` 选通 `a`，`sel=1` 选通 `b` |
+
+> 更多模块将在后续实验中逐步添加到 `lib/` 中，以下是后续待实现模块：
+
+| 模块名 | 文件 | 功能 |
+|--------|------|------|
+| 半加器 | `core_half_adder.v` | 求和 + 进位 |
+| 全加器 | `core_full_adder.v` | 带进位的加法 |
+| D触发器 | `core_d_ff.v` | 边沿触发存储单元 |
+
+
+## 🔗 相关资源
 
 - [逻辑派 G1 官方维基](https://wiki.lckfb.com/zh-hans/fpga-ljpi/index.html)
 - [高云云源软件下载](https://www.gowinsemi.com/)
