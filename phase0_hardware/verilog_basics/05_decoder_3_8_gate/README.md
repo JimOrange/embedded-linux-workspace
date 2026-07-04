@@ -53,8 +53,8 @@
 // 让综合器自动生成最优电路结构。
 // ============================================
 
-`include "../lib/core_and_gate.v"
-`include "../lib/core_not_gate.v"
+`include "../lib/gate_level/core_and_gate.v"
+`include "../lib/gate_level/core_not_gate.v"
 
 module decoder_3_8_gate (
     input  wire [2:0] in,
