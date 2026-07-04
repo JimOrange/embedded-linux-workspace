@@ -85,9 +85,9 @@ and_b ──────────────│          │
 // 功能：sel=0 选通 a；sel=1 选通 b
 // 注：输入输出均为正逻辑
 // ============================================
-`include "../lib/core_and_gate.v"
-`include "../lib/core_or_gate.v"
-`include "../lib/core_not_gate.v"
+`include "../lib/gate_level/core_and_gate.v"
+`include "../lib/gate_level/core_or_gate.v"
+`include "../lib/gate_level/core_not_gate.v"
 
 module my_mux2_core (
     input  wire a,
