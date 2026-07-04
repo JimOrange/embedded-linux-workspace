@@ -4,7 +4,7 @@
 // 用途：可复用的基础逻辑库
 // ============================================
 
-module core_not_gate (
+module not_gate (
     input  wire a,
     output wire out
 );

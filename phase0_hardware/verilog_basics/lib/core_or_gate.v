@@ -4,7 +4,7 @@
 // 用途：可复用的基础逻辑库
 // ============================================
 
-module core_or_gate (
+module or_gate (
     input  wire a,
     input  wire b,
     output wire out
