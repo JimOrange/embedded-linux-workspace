@@ -1,15 +1,9 @@
 // ============================================
 // 三八译码器（门级实现）
-// 功能：in=000 → out[0]=1, in=001 → out[1]=1, ..., in=111 → out[7]=1
-// 
-// 本实验是最后一个使用门级电路手工搭建的模块。
-// 通过这个实验，我完成了对数字电路门级结构的深入理解。
-// 后续所有模块将直接使用行为级描述（assign、always、case），
-// 让综合器自动生成最优电路结构。
 // ============================================
 
-`include "../lib/gate_level/core_and_gate.v"
-`include "../lib/gate_level/core_not_gate.v"
+`include "core_and_gate.v"
+`include "core_not_gate.v"
 
 module decoder_3_8_gate (
     input  wire [2:0] in,
