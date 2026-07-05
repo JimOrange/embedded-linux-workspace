@@ -75,14 +75,6 @@ module mux2 (
 endmodule
 ```
 
-
-## RTL 视图
-
-![RTL视图](./mux2_rtl.png)
-
-*图：mux2 综合后的 RTL 视图，直接映射为一个 2:1 多路器 LUT，无额外组合逻辑。*
-
-
 ## 硬件验证（逻辑派 G1）
 
 ### 引脚分配
@@ -125,6 +117,14 @@ IO_PORT "out" IO_TYPE=LVCMOS33 PULL_MODE=UP DRIVE=8;
 ![仿真波形](./mux2_sim_waveform.png)
 
 *图：mux2 功能仿真波形（正逻辑），输出信号为 `mux2_out`。依次覆盖 8 种输入组合，验证了选择逻辑的正确性。*
+
+
+## RTL 视图
+
+![RTL视图](./mux2_rtl.png)
+
+*图：mux2 综合后的 RTL 视图，直接映射为一个 2:1 多路器 LUT，无额外组合逻辑。*
+
 
 
 ## 设计心得

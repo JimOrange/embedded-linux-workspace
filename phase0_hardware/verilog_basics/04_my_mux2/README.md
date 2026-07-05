@@ -149,10 +149,6 @@ endmodule
 ```
 
 
-## RTL 视图
-
-![RTL视图](./my_mux2_rtl.png)
-
 *图：my_mux2_core 综合后的 RTL 视图，展示了门级模块的层次结构。可以看到四个实例化模块：u_not、u_and_a、u_and_b、u_or。*
 
 
@@ -199,6 +195,10 @@ IO_PORT "out" IO_TYPE=LVCMOS33 PULL_MODE=UP DRIVE=8;
 
 *图：my_mux2 功能仿真波形（正逻辑）。依次覆盖 8 种输入组合，验证了门级实现的正确性：sel=0 时 out 跟随 a，sel=1 时 out 跟随 b。*
 
+
+## RTL 视图
+
+![RTL视图](./my_mux2_rtl.png)
 
 ## 设计心得
 
