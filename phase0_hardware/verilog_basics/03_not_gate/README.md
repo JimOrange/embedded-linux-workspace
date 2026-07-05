@@ -99,6 +99,10 @@ IO_PORT "out" IO_TYPE=LVCMOS33 PULL_MODE=UP DRIVE=8;
 
 *图：非门功能仿真波形（正逻辑）。输入 0 输出 1，输入 1 输出 0。*
 
+## RTL 视图
+
+![RTL视图](./not_gate_rtl.png)
+
 
 ## 小结
 

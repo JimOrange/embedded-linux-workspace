@@ -110,6 +110,10 @@ IO_PORT "out" IO_TYPE=LVCMOS33 PULL_MODE=UP DRIVE=8;
 
 *图：或门功能仿真波形（正逻辑）。图中依次覆盖 4 种输入组合，验证了标准或门功能：只要 a 或 b 为 1，输出即为 1。*
 
+## RTL 视图
+
+![RTL视图](./or_gate_rtl.png)
+
 
 ## 小结
 
